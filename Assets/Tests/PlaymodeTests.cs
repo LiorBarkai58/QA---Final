@@ -53,4 +53,15 @@ public class PlaymodeTests
         Assert.IsFalse(Player.instance);
         
     }
+
+    [UnityTest]
+    public IEnumerator PowerupTest()
+    {
+        Bonus bonus = Object.FindFirstObjectByType<Bonus>();
+        int startingPower = PlayerShooting.instance.weaponPower;
+        bonus.transform.position = Player.instance.transform.position;
+        yield return new WaitForSeconds(1);
+        Assert.AreEqual(PlayerShooting.instance.weaponPower, startingPower+1);
+        yield return null;
+    }
 }
