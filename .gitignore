@@ -1,0 +1,72 @@
+# ==========================
+# Unity Generated Folders
+# ==========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# Addressables
+ServerData/
+
+# ==========================
+# Visual Studio / Rider
+# ==========================
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Rider
+*.DotSettings.user
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# Crash Reports
+# ==========================
+sysinfo.txt
+
+# ==========================
+# Unity Auto-generated Files
+# ==========================
+*.apk
+*.aab
+*.unitypackage
+
+# ==========================
+# Generated Test Results
+# ==========================
+TestResults/
+
+# ==========================
+# Ignore Package Cache
+# (safe because Package Manager restores it)
+# ==========================
+Library/PackageCache/
+
+# ==========================
+# Ignore Recordings
+# ==========================
+Recordings/
