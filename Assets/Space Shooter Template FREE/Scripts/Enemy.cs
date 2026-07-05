@@ -36,6 +36,11 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public Transform ForceShoot()
+    {
+        return Instantiate(Projectile,  gameObject.transform.position, Quaternion.identity).transform;             
+    }
+
     //method of getting damage for the 'Enemy'
     public void GetDamage(int damage) 
     {
