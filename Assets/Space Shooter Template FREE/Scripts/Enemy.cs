@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour {
     #region FIELDS
     [Tooltip("Health points in integer")]
     public int health;
+    public int shield;
+    public SpriteRenderer ShieldSpriteRenderer;
 
     [Tooltip("Enemy's projectile prefab")]
     public GameObject Projectile;
@@ -39,11 +41,23 @@ public class Enemy : MonoBehaviour {
     //method of getting damage for the 'Enemy'
     public void GetDamage(int damage) 
     {
-        health -= damage;           //reducing health for damage value, if health is less than 0, starting destruction procedure
-        if (health <= 0)
-            Destruction();
+        if (shield == 0)
+        {
+            health -= damage;           //reducing health for damage value, if health is less than 0, starting destruction procedure
+            if (health <= 0)
+                Destruction();
+            else
+                Instantiate(hitEffect,transform.position,Quaternion.identity,transform);
+        }
         else
-            Instantiate(hitEffect,transform.position,Quaternion.identity,transform);
+        {
+            shield -= damage;
+            if (shield <= 0)
+            {
+                shield = 0;
+                ShieldSpriteRenderer.enabled = false;
+            }
+        }
     }    
 
     //if 'Enemy' collides 'Player', 'Player' gets the damage equal to projectile's damage value
