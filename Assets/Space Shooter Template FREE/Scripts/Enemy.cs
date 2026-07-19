@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour {
             if (health <= 0)
                 Destruction();
             else
-                Instantiate(hitEffect,transform.position,Quaternion.identity,transform);
+                if(hitEffect)Instantiate(hitEffect,transform.position,Quaternion.identity,transform);
         }
         else
         {
@@ -60,10 +60,24 @@ public class Enemy : MonoBehaviour {
             if (shield <= 0)
             {
                 shield = 0;
-                ShieldSpriteRenderer.enabled = false;
+                if(ShieldSpriteRenderer) ShieldSpriteRenderer.enabled = false;
             }
         }
-    }    
+    }
+
+    public void SetShield(int newShield)
+    {
+        if (newShield > 0)
+        {
+            shield = newShield;
+            if(ShieldSpriteRenderer) ShieldSpriteRenderer.enabled = true;
+        }
+        else
+        {
+            shield = 0;
+            if(ShieldSpriteRenderer) ShieldSpriteRenderer.enabled = false;
+        }
+    }
 
     //if 'Enemy' collides 'Player', 'Player' gets the damage equal to projectile's damage value
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,7 +94,7 @@ public class Enemy : MonoBehaviour {
     //method of destroying the 'Enemy'
     void Destruction()                           
     {        
-        Instantiate(destructionVFX, transform.position, Quaternion.identity); 
+        if(destructionVFX) Instantiate(destructionVFX, transform.position, Quaternion.identity); 
         Destroy(gameObject);
     }
 }

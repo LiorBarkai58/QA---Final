@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     //'Player's' destruction procedure
     void Destruction()
     {
-        Instantiate(destructionFX, transform.position, Quaternion.identity); //generating destruction visual effect and destroying the 'Player' object
+        if(destructionFX) Instantiate(destructionFX, transform.position, Quaternion.identity); //generating destruction visual effect and destroying the 'Player' object
         Destroy(gameObject);
     }
 }

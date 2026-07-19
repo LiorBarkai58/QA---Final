@@ -64,4 +64,18 @@ public class PlaymodeTests
         Assert.AreEqual(PlayerShooting.instance.weaponPower, startingPower+1);
         yield return null;
     }
+    
+    [UnityTest]
+    public IEnumerator TestDeathLogic()
+    {
+        var go = new GameObject("EnemyTest");
+        var enemy = go.AddComponent<Enemy>();
+
+        enemy.health = 10;
+        enemy.GetDamage(10);
+        yield return null;
+        Assert.IsFalse(enemy);
+    }
+
+    
 }
