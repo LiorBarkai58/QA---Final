@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour {
     private void Start()
     {
         Invoke("ActivateShooting", Random.Range(shotTimeMin, shotTimeMax));
+        SetShield(shield);
     }
 
     //coroutine making a shot

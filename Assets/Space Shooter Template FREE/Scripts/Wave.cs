@@ -24,6 +24,8 @@ public class Wave : MonoBehaviour {
     [Tooltip("Enemy's prefab")]
     public GameObject enemy;
 
+    public int shieldHP = 0;
+
     [Tooltip("a number of enemies in the wave")]
     public int count;
 
@@ -69,6 +71,7 @@ public class Wave : MonoBehaviour {
             followComponent.SetPath(); 
             Enemy enemyComponent = newEnemy.GetComponent<Enemy>();  
             enemyComponent.shotChance = shooting.shotChance; 
+            enemyComponent.SetShield(shieldHP);
             enemyComponent.shotTimeMin = shooting.shotTimeMin; 
             enemyComponent.shotTimeMax = shooting.shotTimeMax;
             newEnemy.SetActive(true);      

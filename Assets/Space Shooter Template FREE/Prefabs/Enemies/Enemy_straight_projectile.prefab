@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  shield: 1
+  shield: 0
   ShieldSpriteRenderer: {fileID: 8987915555301105792}
   Projectile: {fileID: 1728936453619090, guid: 9610b32634c0355409b4b5991571a66b, type: 3}
   destructionVFX: {fileID: 1280240331523082, guid: 45ae5851ef2832044bba82850372d67b,
