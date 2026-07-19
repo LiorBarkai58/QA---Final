@@ -142,6 +142,6 @@ public class Wave : MonoBehaviour {
             newPathPos = new Vector3[LoopSpline.Length];
             Array.Copy(LoopSpline, newPathPos, LoopSpline.Length);
         }
-        return (newPathPos);
+        return (newPathPos);//
     }
 }
