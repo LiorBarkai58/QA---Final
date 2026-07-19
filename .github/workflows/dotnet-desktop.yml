@@ -3,7 +3,7 @@ name: PlayMode Tests
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   checks: write
